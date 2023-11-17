@@ -1,5 +1,4 @@
 # 7135CEM-Modelling and Optimisation_Courework
-This coursework has two differnt tasks.
 
 # Task 1- CropMinder: Optimising Agricultural Yields with Classification Process.
 # Dataset
