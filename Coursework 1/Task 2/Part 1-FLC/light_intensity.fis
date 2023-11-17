@@ -1,0 +1,33 @@
+[System]
+Name='light_intensity'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='light'
+Range=[0 1000]
+NumMFs=3
+MF1='low':'trimf',[0 150 300]
+MF2='med':'trimf',[200 450 700]
+MF3='high':'trimf',[500 750 1000]
+
+[Output1]
+Name='blinds'
+Range=[0 100]
+NumMFs=3
+MF1='closed':'trimf',[0 30 60]
+MF2='partial_closed':'trimf',[30 60 90]
+MF3='open':'trimf',[60 90 100]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
