@@ -1,0 +1,33 @@
+[System]
+Name='humidity'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='humid'
+Range=[0 100]
+NumMFs=3
+MF1='low':'trimf',[20 40 60]
+MF2='med':'trimf',[30 60 80]
+MF3='high':'trimf',[50 80 100]
+
+[Output1]
+Name='heater'
+Range=[0 100]
+NumMFs=3
+MF1='low':'trimf',[0 30 60]
+MF2='med':'trimf',[30 60 90]
+MF3='high':'trimf',[60 90 100]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
